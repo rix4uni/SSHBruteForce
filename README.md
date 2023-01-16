@@ -1,4 +1,11 @@
 # SSHBruteForce
+
+# Installation
+
+```
+https://github.com/rix4uni/SSHBruteForce.git
+cd SSHBruteForce
+```
  
 # Usage
 ssh password wordlists generator
