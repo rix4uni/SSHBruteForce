@@ -55,5 +55,5 @@ options:
   -up string
         File containing usernames & passwords (default "ssh-username-password.txt")
 examples:
-  go run ssh-brute-force-default-credentails.go -ip 127.0.0.1:22 -up ssh-password.txt
+  go run ssh-brute-force-default-credentails.go -ip 127.0.0.1:22 -up ssh-username-password.txt
 ```
