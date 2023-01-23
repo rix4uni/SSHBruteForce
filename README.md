@@ -29,7 +29,7 @@ examples:
 ```
 
 # Usage
-ssh login bruteforce
+ssh login bruteforce for one username with multiple passwords
 ```
 options:
   -ip string
@@ -37,9 +37,23 @@ options:
   -p string
         file containing passwords to try (default "ssh-passwords.txt")
   -t int
-        number of threads to use (default 20)
+        number of threads to use (default 5)
   -u string
         username for SSH login (default "root")
 examples:
-  go run ssh-brute-force.go -u root -ip 127.0.0.1:22 -p ssh-password.txt -t 100
+  go run ssh-brute-force.go -u root -ip 127.0.0.1:22 -p ssh-password.txt
+```
+
+# Usage
+ssh login bruteforce for default credentails
+```
+options:
+  -ip string
+        IP and port for SSH login (default "127.0.0.1:22")
+  -t int
+        number of threads to use (default 5)
+  -up string
+        File containing usernames & passwords (default "ssh-username-password.txt")
+examples:
+  go run ssh-brute-force-default-credentails.go -ip 127.0.0.1:22 -up ssh-password.txt
 ```
