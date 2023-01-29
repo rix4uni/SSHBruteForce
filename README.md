@@ -3,7 +3,7 @@
 # Installation
 
 ```
-https://github.com/rix4uni/SSHBruteForce.git
+git clone https://github.com/rix4uni/SSHBruteForce.git
 cd SSHBruteForce
 ```
  
