@@ -36,8 +36,6 @@ options:
         IP and port for SSH login (default "127.0.0.1:22")
   -p string
         file containing passwords to try (default "ssh-passwords.txt")
-  -t int
-        number of threads to use (default 5)
   -u string
         username for SSH login (default "root")
 examples:
@@ -50,8 +48,6 @@ ssh login bruteforce for default credentails
 options:
   -ip string
         IP and port for SSH login (default "127.0.0.1:22")
-  -t int
-        number of threads to use (default 5)
   -up string
         File containing usernames & passwords (default "ssh-username-password.txt")
 examples:
